@@ -355,7 +355,7 @@ class SpotdApp:
 
         # Logo
         SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-        logo_path = os.path.join(SCRIPT_DIR, "logo_white.png")
+        logo_path = os.path.join(SCRIPT_DIR, "docs/logo_white.png")
         
         try:
             # Caricamento e ridimensionamento logo
@@ -723,3 +723,4 @@ class SpotdApp:
 
 if __name__ == "__main__": # Avvio applicazione 
     SpotdApp()
+
