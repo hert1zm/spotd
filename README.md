@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/bBv9Grf.png" alt="SPOTD Logo" width="120"/>
+  <img src="docs/logo_grey.png" alt="SPOTD Logo" width="120"/>
   
   # spotd - Sistema di Puntatore Automatizzato
   
