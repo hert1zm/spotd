@@ -15,7 +15,7 @@
 </div>
 
 ---
-  > 📘 La documentazione condensata è ora disponibile: `spotd/docs/spotd_docu.pdf`
+  > 📘 La documentazione completa è ora disponibile: `spotd/docs/spotd_docu.pdf`
 
 ## Caratteristiche Principali
 
