@@ -28,6 +28,11 @@
 
 ## Quick Start
 
+### Prerequisiti
+
+  > ⚠️ MediaPipe richiede python3.12.x o precedenti per funzionare, python3.13.x NON funziona!
+- **telecamera** USB o qualsiasi altra webcam con live feed
+- **Arduino** (opzionale per controllo hardware)
 ### Installazione Rapida
 
 ```bash
@@ -41,13 +46,6 @@ pip install opencv-python mediapipe customtkinter Pillow numpy scipy
 # Avvia l'applicazione
 python spotd.py
 ```
-
-### Prerequisiti
-
-- **Python 3.8+**
-- **telecamera** USB o qualsiasi altra webcam con live feed
-- **Arduino** (opzionale per controllo hardware)
-
 ## Utilizzo
 
 ### Modalità Simulazione
