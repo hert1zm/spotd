@@ -2,6 +2,7 @@
   <img src="docs/logo_grey.png" alt="SPOTD Logo" width="120"/>
   
   # spotd - Sistema di Puntatore Automatizzato
+    ⚠️ È stato riscontrato un problema con la comunicazione seriale, fix coming soon!!
   
   **Un sistema di tracking automatico che utilizza visione artificiale per rilevare la posizione del corpo e controllare un sistema pan-tilt tramite controllo PID.**
   
