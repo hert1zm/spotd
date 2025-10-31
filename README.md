@@ -1,71 +1,73 @@
 <div align="center">
   <img src="docs/logo_grey.png" alt="SPOTD Logo" width="120"/>
   
-  # spotd - Sistema di Puntatore Automatizzato
-    ⚠️ È stato riscontrato un problema con la comunicazione seriale, fix coming soon!!
+  # spotd - Automatic body tracking system
+    ⚠️ A problem was encountered with serial communication, fix coming "soon" !!
   
-  **Un sistema di tracking automatico che utilizza visione artificiale per rilevare la posizione del corpo e controllare un sistema pan-tilt tramite controllo PID.**
+  **An automatic tracking system that uses computer vision to detect body position and control a pan-tilt system via PID control.**
   
   ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
   ![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)
   ![MediaPipe](https://img.shields.io/badge/MediaPipe-latest-orange.svg)
   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
   
-  *Sviluppato per il corso UF22 Sistemi Automatici*
+  *Developed for the UF22 Automatic Systems course*
   
 </div>
 
 ---
-  > 📘 La documentazione completa è ora disponibile: `spotd/docs/spotd_docu.pdf`
+  > 📘 Complete documentation is now available: `spotd/docs/spotd_docu.pdf` (only read if you are a nerd and know italian)
 
-## Caratteristiche Principali
+## Features
 
-- **Tracking in tempo reale** delle pose corporee con MediaPipe
-- **Interfaccia grafica moderna** sviluppata con CustomTkinter
-- **Sistema di controllo PID** ottimizzato per servomotori pan-tilt
-- **Modalità simulazione e hardware** per testing e deployment
-- **Visualizzazione real-time** delle coordinate di tracking
-- **Auto-rilevamento** porte seriali Arduino
+- **Real-time** body pose tracking with MediaPipe
+- **Modern GUI** based on CustomTkinter
+- **PID control system** optimized for pan-tilt servomotors
+- **Simulation and hardware modes** for testing and deployment
+- **Real-time visualization** of tracking coordinates
+- **Auto-detection** of serial ports
 
 ## Quick Start
 
-### Prerequisiti
+### Prerequisites
 
-  > ⚠️ MediaPipe richiede python3.12.x o precedenti per funzionare, python3.13.x NON funziona!
-- **telecamera** USB o qualsiasi altra webcam con live feed
-- **Arduino** (opzionale per controllo hardware)
-### Installazione Rapida
+  > ⚠️ MediaPipe requires python3.12.x or earlier to run, python3.13.x will NOT work!
+- **USB camera** or any other webcam with live feed
+- **Arduino** (optional for hardware control)
+### Quick Installation
 
 ```bash
-# Clona la repo
+# Clone the repo
 git clone https://github.com/hert1zm/spotd.git
 cd spotd
 
-# Installa le dipendenze - se pip non funziona usa python -m pip install ...
+# Install dependencies - if pip doesn't work, use python -m pip install ...
 pip install opencv-python mediapipe customtkinter Pillow numpy scipy
 
-# Avvia l'applicazione
+# Start the application
 python spotd.py
 ```
-## Utilizzo
+## Usage
 
-### Modalità Simulazione
-L'applicazione parte automaticamente in modalità simulazione - posizionati davanti alla webcam e il sistema rileverà la tua posizione mostrando i comandi servo nel terminale.
+### Simulation Mode
 
-### Modalità Hardware
-1. Connetti Arduino/microcontrollore
-2. Attiva "Modalità HW" nell'interfaccia
-3. Seleziona porta seriale e clicca "Connetti"
-4. Il sistema invierà comandi reali ai servomotori
+Spotd automatically starts in simulation mode - stand in front of the webcam and the system will detect your position and display the servo commands in the terminal.
 
-## Configurazione Arduino
+### Hardware Mode
+1. Connect an Arduino (or any MCU that supports serial communication and can control 2 servos)
+2. Toggle "Hardware Mode" in the GUI
+3. Select the correct serial port and click "Connect"
+4. The system will start sending angles information to the servos 
 
-Il sistema comunica via seriale nel formato:
+## Arduino configuration
+This is an example configuration using an Arduino as servo controller.
+
+The system communicates via serial following this format:
 ```
-PAN:<angolo>,TILT:<angolo>\n
+PAN:<angle>,TILT:<angle>\n
 ```
 
-**Sketch Arduino di esempio:**
+**Sketch:**
 ```cpp
 #include <Servo.h>
 Servo panServo, tiltServo;
